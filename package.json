@@ -22,6 +22,8 @@
     "@cloudflare/workers-types": "^4.20240502.0",
     "h3": "^1.11.1",
     "nitro-cloudflare-dev": "^0.1.4",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.14",
     "wrangler": "^3.53.1"
   }
 }
