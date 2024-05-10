@@ -6,7 +6,13 @@ export default defineNuxtConfig({
     preset: "cloudflare-pages"
   },
 
-  modules: ["nitro-cloudflare-dev", "@nuxtjs/tailwindcss", "@nuxt/fonts", "@nuxt/fonts"],
+  modules: [
+    "nitro-cloudflare-dev",
+    "@nuxtjs/tailwindcss",
+    "@nuxt/fonts",
+    "@nuxt/fonts",
+    "@nuxt/image"
+  ],
   fonts: {
     provider: 'local', // sets default provider
     families: [
