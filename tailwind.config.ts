@@ -18,6 +18,22 @@ export default <Partial<Config>>{
         'extra-short': { raw: '(max-height: 320px)' },
         tall: { raw: '(min-height: 800px)' },
         ...defaultTheme.screens
+      },
+      animation: {
+        'pop': 'pop 0.5s ease-out',
+      },
+      keyframes: {
+        'pop': {
+          '0%': {
+            transform: 'scale(1)',
+          },
+          '50%': {
+            transform: 'scale(1.07)',
+          },
+          '100%': {
+            transform: 'scale(1)',
+          },
+        },
       }
     }
   }

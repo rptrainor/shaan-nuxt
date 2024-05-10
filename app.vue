@@ -1,7 +1,7 @@
 <template>
 	<NuxtLayout>
 		<Header />
-		<main class="mt-4 flex flex-col gap-2 sm:mt-8 lg:mt-12">
+		<main class="mt-4 flex flex-col gap-2 sm:mt-8 lg:mt-12 min-h-screen">
 			<p
 				class="relative -left-2 top-1 max-w-fit -rotate-6 rounded bg-background-accent px-3 py-2 font-PPNeueMontrealSemiBold text-lg font-semibold leading-none text-text-primary sm:top-2">
 				Hey, I'm Shaan&#8230;
@@ -18,6 +18,7 @@
 				class="w-full max-w-md font-sans text-sm font-medium text-text-primary placeholder:text-xs"
 				style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
 		</main>
+		<Footer />
 	</NuxtLayout>
 </template>
 
