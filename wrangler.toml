@@ -75,6 +75,11 @@ pages_build_output_dir = "./dist"
 # binding = "MY_KV_NAMESPACE"
 # id = "<PREVIEW_NAMESPACE_ID>"
 
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "shaan-db"
+database_id = "9ab279cc-1d97-4f21-b3ce-8875354c3080"
+
 ######## PRODUCTION environment config ########
 
 # [env.production.vars]
@@ -83,3 +88,8 @@ pages_build_output_dir = "./dist"
 # [[env.production.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
 # id = "<PRODUCTION_NAMESPACE_ID>"
+
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "shaan-db"
+database_id = "9ab279cc-1d97-4f21-b3ce-8875354c3080"
