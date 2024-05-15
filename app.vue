@@ -4,6 +4,14 @@
 	</NuxtLayout>
 </template>
 
+<script setup lang="ts">
+useHead({
+  htmlAttrs: {
+    lang: 'en-US',
+  }
+})
+</script>
+
 <style scoped>
 h1,
 p {
