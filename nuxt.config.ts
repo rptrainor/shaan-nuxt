@@ -13,6 +13,11 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/image"
   ],
+  runtimeConfig: {
+    public: {
+      NUXT_CLOUDFLARE_KV_STORE_ARTICLES_BASE_URL: 'https://shaan-cloudflare-worker.ryan9551.workers.dev'
+    }
+  },
   fonts: {
     provider: 'local', // sets default provider
     families: [
