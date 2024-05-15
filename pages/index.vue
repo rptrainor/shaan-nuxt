@@ -13,10 +13,14 @@
         Join&nbsp;<span class="font-semibold">109,050</span>&nbsp;entrepreneurs on my email list. It's
         good, I&nbsp;swear.
       </p>
-      <iframe title="newsletter" src="https://embeds.beehiiv.com/0981ff0c-788f-4a28-937e-59be0cc398f5?slim=true"
-        data-test-id="beehiiv-embed" height="52"
-        class="w-full max-w-md font-sans text-sm font-medium text-text-primary placeholder:text-xs"
-        style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+      <form
+        class="w-full max-w-md font-sans text-sm font-medium text-text-primary placeholder:text-xs rounded border-2 border-black flex flex-col sm:flex-row">
+        <label for="email" class="sr-only">Email</label>
+        <input class="bg-white py-2 px-4 text-lg rounded h-11" placeholder="Enter your email" type="email" name="email"
+          required=true>
+        <button type="submit"
+          class="flex justify-center items-center w-full h-11 bg-text-primary text-white font-medium text-xl">Subscribe</button>
+      </form>
     </section>
     <Articles />
   </main>
