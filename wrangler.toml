@@ -15,8 +15,8 @@ pages_build_output_dir = "./dist"
 # - https://developers.cloudflare.com/pages/functions/bindings/#environment-variables
 # Note: Use secrets to store sensitive data.
 # - https://developers.cloudflare.com/pages/functions/bindings/#secrets
-[vars]
-MY_VARIABLE = "production_value"
+# [vars]
+# MY_VARIABLE = "production_value"
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
 # Docs: https://developers.cloudflare.com/pages/functions/bindings/#workers-ai
@@ -75,10 +75,10 @@ MY_VARIABLE = "production_value"
 # binding = "MY_KV_NAMESPACE"
 # id = "<PREVIEW_NAMESPACE_ID>"
 
-[[d1_databases]]
-binding = "DB" # i.e. available in your Worker on env.DB
-database_name = "shaan-db"
-database_id = "9ab279cc-1d97-4f21-b3ce-8875354c3080"
+# [[d1_databases]]
+# binding = "DB" # i.e. available in your Worker on env.DB
+# database_name = "shaan-db"
+# database_id = "9ab279cc-1d97-4f21-b3ce-8875354c3080"
 
 ######## PRODUCTION environment config ########
 
@@ -89,7 +89,7 @@ database_id = "9ab279cc-1d97-4f21-b3ce-8875354c3080"
 # binding = "MY_KV_NAMESPACE"
 # id = "<PRODUCTION_NAMESPACE_ID>"
 
-[[d1_databases]]
-binding = "DB" # i.e. available in your Worker on env.DB
-database_name = "shaan-db"
-database_id = "9ab279cc-1d97-4f21-b3ce-8875354c3080"
+# [[d1_databases]]
+# binding = "DB" # i.e. available in your Worker on env.DB
+# database_name = "shaan-db"
+# database_id = "9ab279cc-1d97-4f21-b3ce-8875354c3080"
