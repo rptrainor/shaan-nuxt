@@ -54,12 +54,19 @@ const runtimeConfig = useRuntimeConfig()
 const route = useRoute()
 
 const slug = route.params.slug as string
-const { data, pending, error } = await useAsyncData('articles', async () => {
+const { data } = await useAsyncData('articles', async () => {
   const response = await fetch(`${runtimeConfig.public.NUXT_CLOUDFLARE_KV_STORE_ARTICLES_BASE_URL}/articles/${slug}`)
   if (!response.ok) {
     throw new Error('Failed to fetch single article')
   }
   return response.json() as Promise<Article>
+})
+
+useSeoMeta({
+  title: data.value?.title ?? '',
+  ogTitle: data.value?.title ?? '',
+  description: data.value?.description ?? '',
+  ogDescription: data.value?.description ?? '',
 })
 
 const formatPublishedDate = (dateString: string): string => {

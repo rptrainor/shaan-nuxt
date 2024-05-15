@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxt/fonts",
     "@nuxt/fonts",
-    "@nuxt/image"
+    "@nuxt/image",
+    "@nuxtjs/sitemap"
   ],
   runtimeConfig: {
     public: {

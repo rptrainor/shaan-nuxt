@@ -22,3 +22,12 @@
   </main>
   <Footer />
 </template>
+
+<script setup lang="ts">
+useSeoMeta({
+  title: 'THE GREATEST BLOG ON THE MOTHER FU**ING PLANET.',
+  ogTitle: 'THE GREATEST BLOG ON THE MOTHER FU**ING PLANET.',
+  description: 'The only blog that Paul Graham reads. So you should read it too.',
+  ogDescription: 'The only blog that Paul Graham reads. So you should read it too.'
+})
+</script>
