@@ -8,7 +8,7 @@
         </a>
       </div>
       <div class="mt-8 md:order-1 md:mt-0">
-        <p class="text-center text-xs leading-5 text-text-primary">&copy; 2024 Shaan Puri, All rights reserved.</p>
+        <p class="text-left text-xs leading-5 text-text-primary">&copy; 2024 Shaan Puri, All rights reserved.</p>
       </div>
     </div>
   </footer>
