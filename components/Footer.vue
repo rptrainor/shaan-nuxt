@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="py-4 md:flex md:items-center md:justify-between">
+    <div class="py-4 md:flex md:items-center md:justify-between px-4">
       <div class="flex justify-center space-x-6 md:order-2">
         <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-text-primary hover:animate-pop">
           <span class="sr-only">{{ item.name }}</span>
