@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <main class="min-h-[calc(100vh-16.25rem)] sm:min-h-[calc(100vh-13rem)]">
+  <main class="min-h-[calc(100vh-11rem)] md:min-h-[calc(100vh-10rem)]">
     <section class="flex flex-col gap-2 py-16 sm:py-24 md:py-32">
       <p
         class="relative -left-2 top-1 max-w-fit -rotate-6 rounded bg-background-accent px-3 py-2 font-PPNeueMontrealSemiBold text-lg font-semibold leading-none text-text-primary sm:top-2">

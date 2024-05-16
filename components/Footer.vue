@@ -1,13 +1,13 @@
 <template>
   <footer>
-    <div class="py-12 md:flex md:items-center md:justify-between">
+    <div class="py-4 md:flex md:items-center md:justify-between">
       <div class="flex justify-center space-x-6 md:order-2">
         <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-text-primary hover:animate-pop">
           <span class="sr-only">{{ item.name }}</span>
           <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
         </a>
       </div>
-      <div class="mt-8 md:order-1 md:mt-0">
+      <div class="md:order-1 mt-4">
         <p class="text-left text-xs leading-5 text-text-primary">&copy; 2024 Shaan Puri, All rights reserved.</p>
       </div>
     </div>
