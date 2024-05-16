@@ -22,9 +22,7 @@
         </div>
       </a>
       <p class="text-lg font-semibold">Want more stories like this in your inbox?</p>
-      <iframe title="subscribe" src="https://embeds.beehiiv.com/0981ff0c-788f-4a28-937e-59be0cc398f5?slim=true"
-        data-test-id="beehiiv-embed" height="52" frameborder="0"
-        style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+      <SubscriptionForm />
     </section>
   </main>
   <Footer />
