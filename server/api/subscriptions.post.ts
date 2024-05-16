@@ -1,5 +1,23 @@
 // server/api/create.post.ts
 
+type BeehiivResponse = {
+  data: {
+    id: string;
+    email: string;
+    status: string;
+    created: number;
+    subscription_tier: string;
+    subscription_premium_tier_names: string[];
+    utm_source: string;
+    utm_medium: string;
+    utm_channel: string;
+    utm_campaign: string;
+    referring_site: string;
+    referral_code: string;
+    stripe_customer_id: string;
+  };
+}
+
 export default defineEventHandler(async (event) => {
   if (event.node.req.method !== 'POST') {
     return {
@@ -21,7 +39,11 @@ export default defineEventHandler(async (event) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(body)
-    });
+    }) as BeehiivResponse;
+
+    if (response?.data?.status === 'invalid') {
+      return new Error('Invalid email address, please try again.');
+    }
 
     return {
       response,
