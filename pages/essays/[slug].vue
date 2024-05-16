@@ -63,10 +63,10 @@ if (error.value) {
 }
 
 useSeoMeta({
-  title: data.value?.title ?? '',
-  ogTitle: data.value?.title ?? '',
-  description: data.value?.description ?? '',
-  ogDescription: data.value?.description ?? '',
+  title: data.value?.title ?? 'THE GREATEST BLOG ON THE MOTHER FU**ING PLANET.',
+  ogTitle: data.value?.title ?? 'THE GREATEST BLOG ON THE MOTHER FU**ING PLANET.',
+  description: data.value?.description ?? 'The only blog that Paul Graham reads. So you should read it too.',
+  ogDescription: data.value?.description ?? 'The only blog that Paul Graham reads. So you should read it too.',
 })
 
 const formatPublishedDate = (dateString: string): string => {
