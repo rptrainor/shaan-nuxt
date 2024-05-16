@@ -10,17 +10,15 @@
           {{ formattedData.title }}
         </h1>
       </div>
-      <p class="mt-8 text-sm text-left w-full italic">This blog post takes <bold class="font-bold">{{
-        formattedData.read_time }}</bold> minutes to read</p>
+      <p class="mt-8 text-sm text-left w-full italic">This blog post takes <strong class="font-bold">{{
+        formattedData.read_time }}</strong> minutes to read</p>
       <div v-html="rawHtmlContent" class="mt-8 text-lg" />
-      <a href="#" id="copy-status" @click.prevent="copyUrl">
-        <div id="copy-button"
-          class="u-mb-1 mt-4 border-black w-full flex flex-col justify-center items-center rounded-md border-2 bg-background-accent text-lg py-3 px-2 my-8">
-          <p class="text-lg font-semibold">
-            {{ copyStatus ? 'Copied!' : 'Enjoy this article? Send to a friend' }}
-          </p>
-        </div>
-      </a>
+      <button @click.prevent="copyUrl"
+        class="u-mb-1 mt-4 border-black w-full flex flex-col justify-center items-center rounded-md border-2 bg-background-accent text-lg py-3 px-2 my-8">
+        <p class="text-lg font-semibold">
+          {{ copyStatus ? 'Copied!' : 'Enjoy this article? Send to a friend' }}
+        </p>
+      </button>
       <p class="text-lg font-semibold">Want more stories like this in your inbox?</p>
       <SubscriptionForm />
     </section>
@@ -52,13 +50,17 @@ const runtimeConfig = useRuntimeConfig()
 const route = useRoute()
 
 const slug = route.params.slug as string
-const { data } = await useAsyncData('articles', async () => {
+const { data, error } = await useAsyncData('articles', async () => {
   const response = await fetch(`${runtimeConfig.public.NUXT_CLOUDFLARE_KV_STORE_ARTICLES_BASE_URL}/articles/${slug}`)
   if (!response.ok) {
     throw new Error('Failed to fetch single article')
   }
   return response.json() as Promise<Article>
 })
+
+if (error.value) {
+  console.error('Failed to load article:', error.value);
+}
 
 useSeoMeta({
   title: data.value?.title ?? '',
@@ -87,8 +89,11 @@ const copyUrl = async () => {
   try {
     await navigator.clipboard.writeText(window.location.href);
     copyStatus.value = true;
+    setTimeout(() => {
+      copyStatus.value = false;
+    }, 2000);
   } catch (err) {
-    console.error('Failed to copy URL: ', err);
+    console.error('Failed to copy URL:', err);
   }
 };
 </script>
