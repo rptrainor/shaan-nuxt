@@ -1,5 +1,3 @@
-// server/api/create.post.ts
-
 type BeehiivResponse = {
   data: {
     id: string;
@@ -18,6 +16,10 @@ type BeehiivResponse = {
   };
 }
 
+type ErrorResponse = {
+  message: string;
+};
+
 export default defineEventHandler(async (event) => {
   if (event.node.req.method !== 'POST') {
     return {
@@ -31,7 +33,7 @@ export default defineEventHandler(async (event) => {
 
     const runtimeConfig = useRuntimeConfig();
 
-    const response = await $fetch(`https://api.beehiiv.com/v2/publications/${runtimeConfig.public.NUXT_BEEHIIV_V2_PUBLICATION_ID}/subscriptions`, {
+    const response = await $fetch<BeehiivResponse>(`https://api.beehiiv.com/v2/publications/${runtimeConfig.public.NUXT_BEEHIIV_V2_PUBLICATION_ID}/subscriptions`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -39,10 +41,13 @@ export default defineEventHandler(async (event) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(body)
-    }) as BeehiivResponse;
+    });
 
     if (response?.data?.status === 'invalid') {
-      return new Error('Invalid email address, please try again.');
+      return {
+        status: 400,
+        statusText: 'Invalid email address, please try again.'
+      };
     }
 
     return {
@@ -50,9 +55,11 @@ export default defineEventHandler(async (event) => {
       ok: true
     };
   } catch (error) {
+    const errorMessage = (error as ErrorResponse).message || 'Internal Server Error';
+    console.error('Error creating subscription:', errorMessage);
     return {
       status: 500,
-      statusText: error ?? 'Internal Server Error'
+      statusText: errorMessage
     };
   }
 });
