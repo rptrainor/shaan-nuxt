@@ -6,7 +6,6 @@ export default defineNuxtConfig({
   nitro: {
     preset: "cloudflare-pages"
   },
-
   modules: [
     "nitro-cloudflare-dev",
     "@nuxtjs/tailwindcss",
@@ -17,7 +16,9 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      NUXT_CLOUDFLARE_KV_STORE_ARTICLES_BASE_URL: 'https://shaan-cloudflare-worker.ryan9551.workers.dev'
+      NUXT_CLOUDFLARE_KV_STORE_ARTICLES_BASE_URL: process.env.NUXT_CLOUDFLARE_KV_STORE_ARTICLES_BASE_URL,
+      NUXT_BEEHIIV_V2_PUBLICATION_ID: process.env.NUXT_BEEHIIV_V2_PUBLICATION_ID,
+      NUXT_BEEHIIV_API_KEY: process.env.NUXT_BEEHIIV_API_KEY,
     }
   },
   fonts: {

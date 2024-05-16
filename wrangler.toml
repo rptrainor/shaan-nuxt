@@ -15,8 +15,9 @@ pages_build_output_dir = "./dist"
 # - https://developers.cloudflare.com/pages/functions/bindings/#environment-variables
 # Note: Use secrets to store sensitive data.
 # - https://developers.cloudflare.com/pages/functions/bindings/#secrets
-# [vars]
-# MY_VARIABLE = "production_value"
+[vars]
+NUXT_BEEHIIV_V2_PUBLICATION_ID="pub_4b651836-6548-45cb-a878-ea3062133bb5"
+NUXT_BEEHIIV_API_KEY="PC3immR96kSaanq5Zgw0jFekCZHcJQvOQR2G60XqCIy2PvWZj61BMbo5SHIB6hU6"
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
 # Docs: https://developers.cloudflare.com/pages/functions/bindings/#workers-ai
